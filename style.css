@@ -1,11 +1,7 @@
 html {
-  background-color: #000;  
+  background-color: #000;
 }
 body {
   margin: 0;
   overflow: hidden;
-}
-canvas {
-  width: 500px !important;
-  height: 500px !important;
 }
