@@ -33,7 +33,6 @@ function onResize() {
 }
 ```
 
-
 ## asset
 - amongus
   - https://sketchfab.com/3d-models/among-us-map-the-skeld-59a93886f9e74ff6836dff0c269da45f

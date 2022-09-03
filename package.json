@@ -1,0 +1,22 @@
+{
+  "name": "3bl",
+  "version": "1.0.0",
+  "description": "https://coordinate-cat.github.io/3bl/   or   `vscode live server`",
+  "main": "stats.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coordinate-Cat/3bl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Coordinate-Cat/3bl/issues"
+  },
+  "homepage": "https://github.com/Coordinate-Cat/3bl#readme",
+  "dependencies": {
+    "stats.js": "^0.17.0"
+  }
+}

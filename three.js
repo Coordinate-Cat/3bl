@@ -10,7 +10,6 @@ let renderer;
 let model;
 
 // ---------------- init() ----------------
-init();
 function init() {
   // シーンの作成
   scene = new THREE.Scene();
@@ -19,19 +18,31 @@ function init() {
   camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 
   // カメラセット
-  camera.position.set(-20, 30, 50);
-  camera.lookAt(new THREE.Vector3(0, 10, 0));
+  camera.position.set(1, 1, 1);
+  camera.lookAt(new THREE.Vector3(0, 0, 4.5));
 
   // 滑らかにカメラコントローラーを制御する
   const controls = new OrbitControls(camera, document.body);
   controls.enableDamping = true;
   controls.dampingFactor = 0.2;
 
-  // 光源
-  const dirLight = new THREE.SpotLight(0xffffff, 2.5); //color,強度
-  dirLight.position.set(-20, 30, 30);
-  scene.add(dirLight);
-  scene.background = new THREE.Color(0x000000);
+  // 光源1
+  const firstLight = new THREE.SpotLight(0xffffff, 1); //color,強度
+  firstLight.position.set(0, 20, 10);
+  scene.add(firstLight);
+
+  // 光源2
+  const secondLight = new THREE.SpotLight(0xffffff, 1); //color,強度
+  secondLight.position.set(0, 20, 90);
+  scene.add(secondLight);
+
+  // ヘルパーを作成
+  // const lightHelper = new THREE.SpotLightHelper(dirLight);
+  // scene.add(lightHelper);
+
+  // 背景色
+  const background = new THREE.Color(0x222222);
+  scene.background = background;
 
   // レンダラー
   renderer = new THREE.WebGLRenderer({
@@ -43,12 +54,12 @@ function init() {
 
   // glbファイルの読み込み
   const loader = new GLTFLoader();
-  loader.load('./model/amongus.glb', function(gltf) {
+  loader.load('./model/mark.glb', function(gltf) {
     model = gltf.scene;
     model.traverse((object) => {           //モデルの構成要素
       if(object.isMesh) {                  //その構成要素がメッシュだったら
         object.material.trasparent = true; //透明許可
-        object.material.opacity = 0.8;     //透過
+        object.material.opacity = 0.8;       //透過
         object.material.depthTest = true;  //陰影で消える部分
       }})
     scene.add(model);
@@ -61,11 +72,10 @@ function init() {
 }
 
 // ---------------- onResize() ----------------
-onResize();
 // リサイズイベント発生時に実行
 window.addEventListener('resize', onResize);
 
-function onResize() {
+function onResize(e) {
   // サイズを取得
   const width = window.innerWidth;
   const height = window.innerHeight;
@@ -80,8 +90,14 @@ function onResize() {
 }
 
 // ---------------- animate() ----------------
-animate();
 function animate() {
   requestAnimationFrame(animate);
+  // model.rotation.x += 0.001;	// x軸方向に回転
+  model.rotation.y += 0.005;	// y軸方向に回転
+  // model.rotation.z += 0.0001;	// z軸方向に回転
   renderer.render(scene, camera);
 }
+
+init();
+onResize();
+animate();
