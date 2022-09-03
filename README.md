@@ -36,3 +36,16 @@ function onResize() {
 ## asset
 - amongus
   - https://sketchfab.com/3d-models/among-us-map-the-skeld-59a93886f9e74ff6836dff0c269da45f
+
+
+## err
+
+err1
+```
+Uncaught TypeError: Cannot read properties of undefined (reading 'rotation')
+```
+
+err2
+```
+[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See <URL>
+```
