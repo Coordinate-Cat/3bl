@@ -44,7 +44,7 @@ function init() {
   //glbファイルの読み込み
   const loader = new GLTFLoader();
 
-  loader.load('https://rawcdn.githack.com/nishi-dy/glb--files/d0a6e1e252671749fc9d80dd5e8e375f132dab56/glass.glb', function(gltf) {
+  loader.load('./model/amongus.glb', function(gltf) {
     model = gltf.scene;
     model.traverse((object) => { //モデルの構成要素
       if(object.isMesh) { //その構成要素がメッシュだったら
