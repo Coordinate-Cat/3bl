@@ -93,7 +93,7 @@ function onResize(e) {
 function animate() {
   requestAnimationFrame(animate);
   // model.rotation.x += 0.001;	// x軸方向に回転
-  model.rotation.y += 0.005;	// y軸方向に回転
+  // model.rotation.y += 0.005;	// y軸方向に回転
   // model.rotation.z += 0.0001;	// z軸方向に回転
   renderer.render(scene, camera);
 }
