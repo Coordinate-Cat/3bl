@@ -54,7 +54,7 @@ function init() {
 
   // glbファイルの読み込み
   const loader = new GLTFLoader();
-  loader.load('./model/mark.glb', function(gltf) {
+  loader.load('./model/マークザッカーバーグ.glb', function(gltf) {
     model = gltf.scene;
     model.traverse((object) => {           //モデルの構成要素
       if(object.isMesh) {                  //その構成要素がメッシュだったら
